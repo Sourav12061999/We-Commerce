@@ -1,0 +1,48 @@
+.main{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0px 7%;
+    align-items: center;
+    position: relative;
+}
+.logo{
+    font-size: 35px;
+}
+.options{
+    display: flex;
+    font-weight: 500;
+    width: 300px;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+.options>div{
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+.options>div:hover{
+    cursor: pointer;
+    color: hotpink;
+    border-bottom: 2px solid hotpink;
+}
+.alignLeft{
+    position: absolute;
+    right: 10%;
+    display: flex;
+}
+.account{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.account:hover{
+    cursor: pointer;
+}
+.account>p{
+    margin-left: 3px;
+}
+.signedin{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}

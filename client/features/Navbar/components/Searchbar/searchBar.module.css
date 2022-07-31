@@ -1,0 +1,17 @@
+.searchBar{
+    display: flex;
+    /* border: 1px solid red; */
+    background-color: rgb(243, 243, 243);
+    padding: 10px 5px;
+    border-bottom: 3px solid rgb(248, 37, 104);
+}
+.searchBar>input{
+    border: none;
+    background-color: rgb(243, 243, 243);
+    font-size: 25px;
+    margin-left: 5px;
+
+}
+.searchBar>input:focus{
+    outline: none;
+}
