@@ -3,6 +3,10 @@
   grid-template-columns: repeat(6,1fr);
   gap: 15px;
 }
+.chooseStore>div>div:hover{
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .chooseStore h2{
   margin-bottom: 20px;
 }

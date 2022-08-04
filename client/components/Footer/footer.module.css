@@ -1,0 +1,19 @@
+.main{
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    padding-top: 2%;
+    margin-top: 50px;
+    padding-left: 5%;
+}
+.main h4{
+    margin-bottom: 15px;
+}
+.main p{
+    margin-bottom: 10px;
+}
+.main p:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
