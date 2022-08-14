@@ -5,7 +5,7 @@ import { VscAccount } from "react-icons/vsc";
 import Cart from "../Cart/cart";
 import Link from "next/link";
 function MainNav() {
-  const isSignedin = true;
+  const isSignedin = false;
   return (
     <div className={styles.main}>
       <div className={styles.logo}>We-Comm</div>
@@ -29,10 +29,12 @@ function MainNav() {
       <div className={styles.alignLeft}>
         <SearchBar />
         {!isSignedin ? (
-          <div className={styles.account}>
-            <VscAccount size={"20px"} />
-            <p>Account</p>
-          </div>
+          <Link href={"/auth"}>
+            <div className={styles.account}>
+              <VscAccount size={"20px"} />
+              <p>Account</p>
+            </div>
+          </Link>
         ) : (
           <div className={styles.signedin}>
             <Cart />

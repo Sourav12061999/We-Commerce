@@ -1,0 +1,65 @@
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.authContainer {
+    width: 90vw;
+    max-width: 500px;
+    background-color: transparent;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    height: 400px;
+    margin-top: 5%;
+    margin-inline: auto;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .authContainerInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* .authContainerInner {
+  } */
+  
+  /* Position the front and back side */
+  .authContainerInner>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    padding-top: 10%;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .authContainerInner>div:nth-child(1) {
+    background-color: white;
+  }
+  .authContainerInner>div:nth-child(2) {
+    transform: rotateY(180deg);
+  }
+
+  .authContainer input{
+    width: 90%;
+    font-size: 25px;
+    padding: 2%;
+    margin-top: 15px;
+  }
+  .authContainer form p{
+    margin-top: 10px;
+  }
+  .authContainer form p span{
+    color: blue;
+  }
+  .authContainer form p span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .authContainer input[type="submit"]{
+    background-color: #4fc3f7;
+    border: none;
+  }
