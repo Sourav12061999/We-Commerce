@@ -30,3 +30,6 @@ nav{
 button:hover{
   cursor: pointer;
 }
+input[type="submit"]:hover{
+  cursor: pointer;
+}
