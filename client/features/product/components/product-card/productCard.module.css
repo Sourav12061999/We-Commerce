@@ -1,0 +1,36 @@
+.product{
+    position: relative;
+}
+.img{
+    width: 100%;
+    position: relative;
+}
+.img>img{
+    width: 100%;
+}
+.text{
+    padding: 2% 4%;
+}
+.product:hover{
+    cursor: pointer;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.brand{
+    position: absolute;
+    background-color: rgb(199, 235, 238);
+    padding: 1.5% 2%;
+    border-radius: 3px;
+    left: 3%;
+    bottom: 10%;
+}
+.catagory{
+    position: absolute;
+    background-color: rgb(223, 199, 238);
+    padding: 1.5% 2%;
+    border-radius: 3px;
+    right: 3%;
+    top: 5%;
+}
+.text>p{
+    margin: 5px 0px;
+}

@@ -1,0 +1,24 @@
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .pagination button {
+    color: black;
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .arrow{
+    font-size: 30px;
+    margin-inline: 5px;
+  }
+  
+  .pagination button.active {
+    background-color: #4CAF50;
+    color: white;
+  }

@@ -11,27 +11,34 @@ const filter = (
   catagory: any | undefined,
   type: any
 ) => {
-  const obj: any = { type,$and:[]};
+  const obj: any = { type };
   if (brand) {
     const brandArr = urlConverter(brand);
+    if (obj["$and"] === undefined) {
+      obj["$and"] = [];
+    }
     obj["$and"].push({
-      $or: brandArr.map((el) => ({ brand: el }))
-    })
+      $or: brandArr.map((el) => ({ brand: el })),
+    });
   }
 
   if (catagory) {
     const catagoryArr = urlConverter(catagory);
+    if (obj["$and"] === undefined) {
+      obj["$and"] = [];
+    }
     obj["$and"].push({
-      $or: catagoryArr.map((el) => ({ catagory: el }))
-    })
+      $or: catagoryArr.map((el) => ({ catagory: el })),
+    });
   }
 
   if (price) {
     const priceSplit = urlConverter(price);
-    obj["$and"].push([
-      { price: { $gte: +priceSplit[0] } },
-      { price: { $lte: +priceSplit[1] } },
-    ]);
+    if (obj["$and"] === undefined) {
+      obj["$and"] = [];
+    }
+    obj["$and"].push({ price: { $gte: +priceSplit[0] } });
+    obj["$and"].push({ price: { $lte: +priceSplit[1] } });
   }
   return obj;
 };

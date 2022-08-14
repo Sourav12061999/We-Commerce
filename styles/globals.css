@@ -26,3 +26,6 @@ nav{
   background-color: white;
   z-index: 100;
 }
+button:hover{
+  cursor: pointer;
+}
