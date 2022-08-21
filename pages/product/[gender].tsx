@@ -2,9 +2,9 @@ import React from 'react'
 import Product from '../../client/features/product';
 function Gender() {
   return (
-    <div>
+    <main>
         <Product/>
-    </div>
+    </main>
   )
 }
 

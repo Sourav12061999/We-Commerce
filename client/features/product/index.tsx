@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 import urlCreator from "./utils/urlCreator";
 import Pagination from "../../components/Pagination/pagination";
 import { useRouter } from "next/router";
+import FilterFooter from "./components/Filter Footer/filterFooter";
+import Modal from "../../components/Modal/modal";
 function Product() {
   const router = useRouter();
   const { gender } = router.query;
@@ -20,6 +22,7 @@ function Product() {
   });
   const [currPage, setCurrPage] = useState(0);
   const [currBtn, setCurrBtn] = useState(1);
+  const [showModal, setShowModal] = useState(false);
   const isInitialMount = useRef(true);
 
   useEffect(() => {
@@ -28,13 +31,17 @@ function Product() {
     } else {
       refetch(`/api/Products/${gender}/${currBtn}/?${urlCreator(filterState)}`);
     }
-  }, [currBtn, filterState, gender,]);
+  }, [currBtn, filterState, gender]);
 
   useEffect(() => {
     setCurrPage(0);
     setCurrBtn(1);
   }, [filterState, gender]);
 
+  useEffect(() => {
+    setShowModal(true);
+  }, [])
+  
   return (
     <div className={styles.main}>
       <div className={styles.filterContainer}>
@@ -57,6 +64,8 @@ function Product() {
           />
         )}
       </div>
+      <FilterFooter />
+      {showModal ? <Modal setShowModal={setShowModal}>Modal</Modal> : null}
     </div>
   );
 }

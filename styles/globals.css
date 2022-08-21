@@ -19,6 +19,7 @@ main{
   width: 90%;
   margin-inline: auto;
   min-height: calc(80vh - 80px);
+  margin-top: 50px;
 }
 .margin-top{
   margin-top: 30px;
