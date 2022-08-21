@@ -1,5 +1,9 @@
 .cart{
     position: relative;
+    margin-left: 10px;
+}
+.cart:hover{
+    cursor: pointer;
 }
 .cartCount{
     position: absolute;

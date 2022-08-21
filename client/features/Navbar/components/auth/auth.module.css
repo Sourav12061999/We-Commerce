@@ -1,0 +1,6 @@
+.account{
+    display: flex;
+}
+.account>p{
+    margin-left: 5px;
+}

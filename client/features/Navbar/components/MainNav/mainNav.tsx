@@ -4,6 +4,7 @@ import SearchBar from "../Searchbar/searchBar";
 import { VscAccount } from "react-icons/vsc";
 import Cart from "../Cart/cart";
 import Link from "next/link";
+import Auth from "../auth/auth";
 function MainNav() {
   const isSignedin = false;
   return (
@@ -28,18 +29,7 @@ function MainNav() {
       </div>
       <div className={styles.alignLeft}>
         <SearchBar />
-        {!isSignedin ? (
-          <Link href={"/auth"}>
-            <div className={styles.account}>
-              <VscAccount size={"20px"} />
-              <p>Account</p>
-            </div>
-          </Link>
-        ) : (
-          <div className={styles.signedin}>
-            <Cart />
-          </div>
-        )}
+        <Auth/>
       </div>
     </div>
   );

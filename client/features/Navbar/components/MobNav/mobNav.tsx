@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./mobNav.module.css";
 import { IoReorderThree } from "react-icons/io5";
-import { VscAccount } from "react-icons/vsc";
-import { BsCart } from "react-icons/bs";
-import Cart from "../Cart/cart";
-import Link from "next/link";
+import Auth from "../auth/auth";
 function MobNav() {
   const isSignedin = false;
   return (
@@ -14,18 +11,7 @@ function MobNav() {
       </div>
       <div className={styles.logo}>We-Comm</div>
       <div className={styles.left}>
-        {!isSignedin ? (
-          <Link href={"/auth"}>
-            <div className={styles.account}>
-              <VscAccount size={"20px"} />
-              <p>Account</p>
-            </div>
-          </Link>
-        ) : (
-          <>
-            <Cart />
-          </>
-        )}
+        <Auth/>
       </div>
     </div>
   );
