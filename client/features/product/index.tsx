@@ -10,6 +10,7 @@ import Pagination from "../../components/Pagination/pagination";
 import { useRouter } from "next/router";
 import FilterFooter from "./components/Filter Footer/filterFooter";
 import Modal from "../../components/Modal/modal";
+import FilterModal from "./components/Filter Modal/filterModal";
 function Product() {
   const router = useRouter();
   const { gender } = router.query;
@@ -22,7 +23,7 @@ function Product() {
   });
   const [currPage, setCurrPage] = useState(0);
   const [currBtn, setCurrBtn] = useState(1);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState<null | number>(null);
   const isInitialMount = useRef(true);
 
   useEffect(() => {
@@ -37,10 +38,7 @@ function Product() {
     setCurrPage(0);
     setCurrBtn(1);
   }, [filterState, gender]);
-
-  useEffect(() => {
-    setShowModal(true);
-  }, [])
+  console.log(showModal);
   
   return (
     <div className={styles.main}>
@@ -64,8 +62,10 @@ function Product() {
           />
         )}
       </div>
-      <FilterFooter />
-      {showModal ? <Modal setShowModal={setShowModal}>Modal</Modal> : null}
+      <FilterFooter setShowModal={setShowModal}/>
+      {showModal !== null ? <Modal setShowModal={setShowModal}>{
+         <FilterModal modalIndex={showModal}/>
+      }</Modal> : null}
     </div>
   );
 }

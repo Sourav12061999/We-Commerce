@@ -9,7 +9,7 @@ interface PropTypes {
 }
 function Modal({ children,setShowModal }: PropTypes) {
   return createPortal(
-    <GrayScreen clickHandler={() => setShowModal(false)}>
+    <GrayScreen clickHandler={() => setShowModal(null)}>
       <div className={styles.modal}>{children}</div>
     </GrayScreen>,
     document.getElementById("portal")!

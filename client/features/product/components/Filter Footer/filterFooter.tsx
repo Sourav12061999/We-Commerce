@@ -1,11 +1,15 @@
 import React from 'react'
 import styles from "./style.module.css";
-function FilterFooter() {
+
+interface PropTypes{
+  setShowModal:(index:number) => void;
+}
+function FilterFooter({setShowModal}:PropTypes) {
   return (
     <div className={styles.main}>
-      <button>Brand</button>
-      <button>Category</button>
-      <button>Price</button>
+      <button onClick={() => setShowModal(0)}>Brand</button>
+      <button onClick={() => setShowModal(1)}>Category</button>
+      <button onClick={() => setShowModal(2)}>Price</button>
     </div>
   )
 }

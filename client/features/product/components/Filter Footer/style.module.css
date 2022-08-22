@@ -5,10 +5,10 @@
     position: fixed;
     bottom: 0px;
     left: 0px;
-    display: flex;
     padding-inline: 10%;
     align-items: center;
     justify-content: space-between;
+    display: none;
 }
 .main>button{
     width: 30%;
@@ -16,4 +16,10 @@
     height: 30px;
     border-radius: 20px;
     border: none;
+}
+
+@media only screen and (max-width:900px){
+    .main{
+        display: flex;
+    }
 }
