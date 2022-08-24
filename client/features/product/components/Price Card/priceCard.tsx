@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./card.module.css";
-import PriceSlider from "../Price Slider/priceSlider";
 import { useDispatch } from "react-redux";
 import { priceFilterType } from "../../product.types";
 interface PropTypes {
