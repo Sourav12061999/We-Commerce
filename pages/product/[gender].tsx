@@ -39,7 +39,6 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   } catch (error) {
     data = {
       isError: true,
-      error
     };
   }
   return {
