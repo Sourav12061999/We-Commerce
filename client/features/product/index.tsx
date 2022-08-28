@@ -57,7 +57,7 @@ function Product({ data }: PropTypes) {
       </div>
       <div className={styles.productContainer}>
         <ProductContainer
-          response={response}
+          response={response || data}
           isLoading={isLoading}
           isError={isError}
           refetch={refetch}

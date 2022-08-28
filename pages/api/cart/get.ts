@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "../../../server/dbConnect";
 import Cart from "../../../server/schemas/cart.scheme";
+import Products from "../../../server/schemas/product.schema";
+import {models,model} from "mongoose";
+import {productSchema} from "../../../server/schemas/product.schema"
 dbConnect();
 export default async function handler(
   req: NextApiRequest,
@@ -14,7 +17,8 @@ export default async function handler(
       });
       return;
     }
-    let data = await await Cart.findOne({ userid: req.query.userid })
+    models.products || model("products",productSchema);
+    let data = await  Cart.findOne({ userid: req.query.userid })
      .populate("products")
      .lean()
      .exec();

@@ -9,18 +9,26 @@ import Slider from "../../../../components/Slider/slider";
 function Cart() {
   const [showCart, setShowCart] = useState(false);
   const cartSize = useSelector((state: RootState) => state.cart.size);
-  const userid = useSelector((state: RootState) => state.auth.userData?._id);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(getCart({ userid: userid || "" }));
+    let userid = localStorage.getItem("userID");
+    if(userid != null){
+      userid = JSON.parse(userid);
+      dispatch(
+        getCart({ userid: userid || "" })
+      );
+    }
   }, []);
 
   return (
     <>
-      <div onClick={() => {
-        setShowCart(true)
-      }} className={styles.cart}>
+      <div
+        onClick={() => {
+          setShowCart(true);
+        }}
+        className={styles.cart}
+      >
         <BsCart size={"30px"} />
         <div className={styles.cartCount}>{cartSize}</div>
       </div>

@@ -60,7 +60,7 @@ const cartSlice = createSlice({
         state.isLoading = false;
         if (action.payload.isSuccess) {
           state.cartData = action.payload.products;
-          state.size = action.payload.products.length;
+          state.size = action.payload.products?.length || 0;
         } else {
           state.isError = true;
           state.msg = "Product Already Exists";
@@ -81,8 +81,8 @@ const cartSlice = createSlice({
       getCart.fulfilled,
       (state, action: PayloadAction<comingData>) => {
         state.isLoading = false;
-        state.cartData = action.payload.products;
-        state.size = action.payload.products.length;
+        state.cartData = action.payload.products || [];
+        state.size = action.payload.products?.length || 0;
       }
     );
     builder.addCase(getCart.rejected, (state, action) => {

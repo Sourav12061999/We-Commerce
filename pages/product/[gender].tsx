@@ -1,20 +1,14 @@
-import React from 'react'
-import Product from '../../client/features/product';
+import React from "react";
+import Product from "../../client/features/product";
 import { GetStaticPropsContext } from "next";
-import apiUrl from '../../globalUrl';
-import { productType } from '../../client/features/product/product.types';
+import apiUrl from "../../globalUrl";
+import { productType } from "../../client/features/product/product.types";
 
 interface PropTypes {
-  data:Array<productType> | null;
+  data: Array<productType> | null;
 }
-function Gender({data}:PropTypes) {
-  return (
-    <main>
-       {
-        data && (<Product data={data}/>)
-       }
-    </main>
-  )
+function Gender({ data }: PropTypes) {
+  return <main>{data && <Product data={data} />}</main>;
 }
 
 export default Gender;
