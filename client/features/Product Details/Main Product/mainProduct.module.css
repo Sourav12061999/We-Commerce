@@ -1,0 +1,75 @@
+.main {
+  display: flex;
+}
+.image {
+  width: 100%;
+  max-width: 600px;
+}
+.image > img {
+  width: 100%;
+}
+
+.text {
+  width: 100%;
+  max-width: 500px;
+  margin-left: 30px;
+}
+
+.title {
+  color: blue;
+  margin-bottom: 30px;
+}
+.brand {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+.name {
+  margin-bottom: 20px;
+}
+.price {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.sizes > div {
+  display: flex;
+}
+.sizes h3 {
+  margin-bottom: 10px;
+}
+.sizes > div > div {
+  padding: 1% 2%;
+  border: 1px solid black;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.cartButton {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  padding: 1% 10%;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.cartButton:hover {
+  background-color: rgb(44, 44, 44);
+}
+
+.offerBox {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid black;
+  padding: 1.5% 3%;
+}
+.offerBox > h4 {
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+}

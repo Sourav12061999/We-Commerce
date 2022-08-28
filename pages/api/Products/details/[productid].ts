@@ -15,7 +15,11 @@ export default async function handler(
       return;
     }
 
-    let similarData = await Products.find({ brand: productData.brand })
+    let similarData = await Products.find({
+      brand: productData.brand,
+      type: productData.type,
+    })
+      .limit(12)
       .lean()
       .exec();
     res

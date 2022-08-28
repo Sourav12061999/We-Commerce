@@ -1,7 +1,17 @@
-import type { NextPage } from "next";
 import Head from "next/head";
-
-const ProductDetails: NextPage = () => {
+import { GetStaticPropsContext } from "next";
+import { productType } from "../../client/features/product/product.types";
+import apiUrl from "../../globalUrl";
+import ProductDetail from "../../client/features/Product Details/index";
+interface PropTypes {
+  data: {
+    isError: boolean;
+    isSuccess: boolean;
+    productData: productType;
+    similarData: Array<productType>;
+  };
+}
+function ProductDetails({ data }: PropTypes) {
   return (
     <div>
       <Head>
@@ -10,10 +20,45 @@ const ProductDetails: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-
+        {data && data.isSuccess && !data.isError && (
+          <ProductDetail
+            productData={data.productData}
+            similarData={data.similarData}
+          />
+        )}
       </main>
     </div>
   );
-};
+}
 
 export default ProductDetails;
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: { productid: "62e64b87186e900f30c94df9" },
+      },
+    ],
+    fallback: true,
+  };
+}
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const { params } = context;
+
+  let data;
+  try {
+    let res = await fetch(`${apiUrl}/Products/details/${params?.productid}`);
+    data = await res.json();
+  } catch (error) {
+    data = {
+      isError: true,
+    };
+  }
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
