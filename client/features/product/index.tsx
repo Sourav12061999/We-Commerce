@@ -14,7 +14,7 @@ import FilterModal from "./components/Filter Modal/filterModal";
 import { productType } from "./product.types";
 
 interface PropTypes {
-  data: Array<productType>;
+  data: { data: Array<productType> };
 }
 function Product({ data }: PropTypes) {
   const router = useRouter();

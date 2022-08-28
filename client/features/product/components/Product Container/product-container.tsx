@@ -12,12 +12,11 @@ function ProductContainer({
   response,
   isLoading,
   isError,
-  refetch,
 }: PropTypes) {
   return (
     <div className={styles.container}>
       {!isLoading && !isError && response
-        ? response.data?.map((el: productType) => (
+        ? response.data.map((el: productType) => (
             <React.Fragment key={el._id}>
               <ProductCard data={el} />
             </React.Fragment>

@@ -5,10 +5,13 @@ import apiUrl from "../../globalUrl";
 import { productType } from "../../client/features/product/product.types";
 
 interface PropTypes {
-  data: Array<productType> | null;
+  data: {
+    isError:boolean,
+    data:Array<productType>
+  } | null;
 }
 function Gender({ data }: PropTypes) {
-  return <main>{data && <Product data={data} />}</main>;
+  return <main>{data && !data.isError && <Product data={data} />}</main>;
 }
 
 export default Gender;
@@ -36,6 +39,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   } catch (error) {
     data = {
       isError: true,
+      error
     };
   }
   return {
