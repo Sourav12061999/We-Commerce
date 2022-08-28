@@ -12,7 +12,7 @@ export default async function handler(
         isError: true,
         msg: `${req.method} is not possible on this route`,
       });
-      return;
+      return true;
     }
     let user = await User.findById(req.query.user).lean().exec();
     res.status(200).json({ isError: false, user });
