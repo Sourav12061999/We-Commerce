@@ -11,12 +11,18 @@ import { useRouter } from "next/router";
 import FilterFooter from "./components/Filter Footer/filterFooter";
 import Modal from "../../components/Modal/modal";
 import FilterModal from "./components/Filter Modal/filterModal";
-function Product() {
+import { productType } from "./product.types";
+
+interface PropTypes {
+  data: Array<productType>;
+}
+function Product({ data }: PropTypes) {
   const router = useRouter();
   const { gender } = router.query;
-  const { response, isLoading, isError, refetch } = useFetch(
+  const { response, isLoading, isError, refetch, setResponse } = useFetch(
     `/api/Products/${gender}/1/?`,
-    "GET"
+    "GET",
+    false
   );
   const filterState = useSelector((state: RootState) => {
     return state.filters;
@@ -25,6 +31,11 @@ function Product() {
   const [currBtn, setCurrBtn] = useState(1);
   const [showModal, setShowModal] = useState<null | number>(null);
   const isInitialMount = useRef(true);
+
+  useEffect(() => {
+    setResponse(data);
+    console.log(data);
+  }, []);
 
   useEffect(() => {
     if (isInitialMount.current) {
@@ -38,8 +49,7 @@ function Product() {
     setCurrPage(0);
     setCurrBtn(1);
   }, [filterState, gender]);
-  console.log(showModal);
-  
+
   return (
     <div className={styles.main}>
       <div className={styles.filterContainer}>
@@ -62,10 +72,12 @@ function Product() {
           />
         )}
       </div>
-      <FilterFooter setShowModal={setShowModal}/>
-      {showModal !== null ? <Modal setShowModal={setShowModal}>{
-         <FilterModal modalIndex={showModal}/>
-      }</Modal> : null}
+      <FilterFooter setShowModal={setShowModal} />
+      {showModal !== null ? (
+        <Modal setShowModal={setShowModal}>
+          {<FilterModal modalIndex={showModal} />}
+        </Modal>
+      ) : null}
     </div>
   );
 }

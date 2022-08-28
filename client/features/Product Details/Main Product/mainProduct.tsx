@@ -1,9 +1,21 @@
-import { createSerializableStateInvariantMiddleware } from "@reduxjs/toolkit";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../../redux/app";
 import React from "react";
 import { productType } from "../../product/product.types";
 import styles from "./mainProduct.module.css";
+import { addToCart } from "../../../redux/cart/cartSlice";
+import { AppDispatch } from "../../../redux/app";
+import Spinner from "../../../components/spinner/spinner";
 
-function MainProduct({ img, brand, name, price, size }: productType) {
+function MainProduct({ img, brand, name, price, size, _id }: productType) {
+  const dispatch = useDispatch<AppDispatch>();
+  const authData = useSelector((state: RootState) => {
+    return state.auth;
+  });
+  const cartData = useSelector((state: RootState) => {
+    return state.cart;
+  });
+
   return (
     <div className={styles.main}>
       <div className={styles.image}>
@@ -18,11 +30,23 @@ function MainProduct({ img, brand, name, price, size }: productType) {
           <h3>Select the Sizes</h3>
           <div>
             {size.map((el) => (
-              <div>{el}</div>
+              <div key={el}>{el}</div>
             ))}
           </div>
         </div>
-        <button className={styles.cartButton}>ADD TO BAG</button>
+        <button
+          onClick={() => {
+            if (authData.isSignin === true && authData.userData?._id) {
+              dispatch(
+                addToCart({ productid: _id, userid: authData.userData._id })
+              );
+              return;
+            }
+          }}
+          className={styles.cartButton}
+        >
+          {cartData.isLoading ? <Spinner /> : <>{"ADD TO BAG"}</>}
+        </button>
         <h3>Offers for you</h3>
         <div className={styles.offerBox}>
           <h4>Use code NFFIRST10 to get flat 10%</h4>

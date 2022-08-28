@@ -5,11 +5,13 @@ import Footer from "../client/components/Footer";
 import { Provider } from "react-redux";
 import { store } from "../client/redux/app";
 function MyApp({ Component, pageProps }: AppProps) {
+  
+
   return (
     <Provider store={store}>
-      <Navbar/>
+      <Navbar />
       <Component {...pageProps} />
-      <Footer/>
+      <Footer />
     </Provider>
   );
 }

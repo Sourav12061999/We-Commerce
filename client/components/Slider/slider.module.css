@@ -1,0 +1,40 @@
+.slider {
+  width: 99vw;
+  background-color: white;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  right: 0px;
+  animation-name: open;
+  animation-duration: 0.5s;
+  max-width: 400px;
+  padding-block: 2%;
+  padding-inline: 10px;
+  z-index: 10001;
+}
+.close:hover{
+    cursor: pointer;
+}
+.cartProduct{
+    display: flex;
+    margin-top: 10px;
+}
+.cartProduct>div:nth-child(1){
+    width: 50%;
+}
+.cartProduct>div:nth-child(2){
+    width: 40%;
+    margin-left: 10px;
+}
+.cartProduct img{
+    width: 100%;
+}
+
+@keyframes open {
+  0% {
+    max-width: 0px;
+  }
+  100% {
+    max-width: 400px;
+  }
+}

@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 function useFetch(
   url: string,
   method: "GET" | "POST" | "PUT" | "DELETE",
-  data?: any
+  fetchonLoad:boolean,
+  data?: any,
 ) {
   const [response, setResponse] = useState<any>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -27,7 +28,9 @@ function useFetch(
     }
   };
   useEffect(() => {
-    refetch(url,data);
+    if(fetchonLoad){
+      refetch(url,data);
+    }
   }, [])
 
   useEffect(() => {
@@ -36,7 +39,7 @@ function useFetch(
     }
   }, [response])
 
-  return {response,isLoading,isError,refetch}
+  return {response,isLoading,isError,refetch,setResponse}
 }
 
 export default useFetch;

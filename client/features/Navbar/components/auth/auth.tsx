@@ -3,8 +3,10 @@ import Cart from "../Cart/cart";
 import Link from "next/link";
 import { VscAccount } from "react-icons/vsc";
 import styles from "./auth.module.css";
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../../redux/app';
 function Auth() {
-    const isSignedin=true;
+    const isSignedin = useSelector((state:RootState) => state.auth.isSignin )
   return (
     <>
     {!isSignedin ? (

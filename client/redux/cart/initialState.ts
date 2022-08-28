@@ -1,7 +1,7 @@
 import { productType } from "../../features/product/product.types";
 
 export interface cartProductType extends productType {
-  quantity: number;
+  
 }
 
 export type cartDataType = {

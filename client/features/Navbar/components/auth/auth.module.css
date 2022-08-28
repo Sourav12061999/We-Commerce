@@ -4,3 +4,9 @@
 .account>p{
     margin-left: 5px;
 }
+.account:hover{
+    cursor: pointer;
+}
+.account>p{
+    text-decoration: underline;
+}
