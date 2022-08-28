@@ -11,6 +11,8 @@ interface PropTypes {
   } | null;
 }
 function Gender({ data }: PropTypes) {
+  console.log(data);
+  
   return <main>{data && !data.isError && <Product data={data} />}</main>;
 }
 
