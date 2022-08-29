@@ -1,63 +1,40 @@
-# Nykaa-fashion clone
-
-This is our first project at masai school construct week after learning HTML,CSS & JAVASCRIPT
-Here is the link of our app live on netlify
-https://keen-clarke-eefd2c.netlify.app/
-
-
-## Contributors
-
-The main Contributors for this project are 
-- Sourav Das
- - Aashish Kumar
- - Thirupathi Challa
+# We Commerce
+It is a Full Stack responsive e-commerce application built with Next.js and MongoDB. Checkout the live website at:- [link](https://we-commerce.vercel.app)
 
  ## Tech Stack
  - HTML
  - CSS
  - Java Script
+ - React
+ - Next.js
+ - Node.js
+ - MongoDB
 
 ## Description
 
 - ### Home page:-
-This is the main landing page of our website. Here clicking on any option of the Navbar will redirect the user to the respective Product Page. Clicking on Account will display an animated popup box for login and sign up. Clicking on Cart will display a cart window where all the products added to cart will be shown.
-![Landing Page](https://miro.medium.com/max/1050/1*UFl6T_Oc9a4ZGKptbD7p2g.png)
+This is the main landing page of our website. Here clicking on any option of the Navbar will redirect the user to the respective Product Page. If you haven't signed up yet an account circle will show up. Clicking on that it will redirect you to the sign up page. If you are already signed in a cart button will show up where you can see all of your cart items.
+![Landing Page]([https://miro.medium.com/max/1050/1*UFl6T_Oc9a4ZGKptbD7p2g.png](https://next-js-blog-codebash.s3.us-east-2.amazonaws.com/Screenshot+2022-08-29+at+9.24.53+AM.png))
 
-- ### Product Page(Women):-
- This is one of the product pages of our website. On the right side all the products with their respective name, brand, price will be shown. On the left side we have filters. There are many filters like filter by Brand, Occassion, Size, Price. All of this filters are fully functioning. Clicking on any product will redirect the user to the Product Details page of that product.
- ![Women](https://miro.medium.com/max/1050/1*nTLdxOHuju100o7Sjy3XrQ.png)
+- ### Product Page:-
+ When you click on Men or Women the Products of that Gender will showup. You can also filter the Products by their Brand or Catagory or Price.
+ Clicked on any Product You will be redirected on a new Page.
+ ![product]([https://miro.medium.com/max/1050/1*nTLdxOHuju100o7Sjy3XrQ.png](https://next-js-blog-codebash.s3.us-east-2.amazonaws.com/Screenshot+2022-08-29+at+9.30.27+AM.png))
 
   - ### Product Details Page:-
-  After clicking on any of the products this Product Details Page will be shown. Here the user can see every thing related to that product. Like the available sizes, delivery date checked by PINCODE. Also below the main product the user will see products from the same brands. Clicking on the Add To Bag Button will add this product to the cart.
- ![Product Details](https://miro.medium.com/max/1050/1*WS7DzzDto8wi7huxwWTABQ.png)
+  After clicking on any Product this Page opens up. Here you can have a detailed view of the Product. This is also the only page from where you can add Products to the cart.
+ ![Product Details]([https://miro.medium.com/max/1050/1*WS7DzzDto8wi7huxwWTABQ.png](https://next-js-blog-codebash.s3.us-east-2.amazonaws.com/Screenshot+2022-08-29+at+9.39.52+AM.png))
+ 
   - ###  Cart Window:-
   Here all the products added to the cart will be shown. At the bottom there is total price of the cart and the proceed to buy button. Clicking on the button will redirect the user to the Payment Page .
   
   ![cart](https://miro.medium.com/max/875/1*jBJkRpRw0VNdZ2eCphX_4A.png)
 
-  - ###  Payment Page 1:-
-  This is the first payment payment page of our webside. Here the user has to fill in his name, shipping details etc. After the user fills those details Saved Address & Edit Address options will be shown in place of Enter Your Address. A Proceed to buy button will show up in Price Summary. Clicking on that will redirect the user to the Payment Page 2.
-  ![Payment1](https://miro.medium.com/max/1050/1*foSDqt3dmYvP5ZyLnuIijg.png)
-  - ### Payment Page 2:-
-   This is the second payment page where the user has to select a payment option. After the user has filled all the details and clicked on Pay Now button A pop up will show saying continue shopping.
-  ![Payment2](https://miro.medium.com/max/1050/1*sNTkdNQsDXccFXO-jy3OCw.png)
-   - ###  After Payment:-
-   After the payment has been done a pop up and image will be shown. Clicking on this Continue with your shopping will redirect the user to the Landing Page.
- ![After Payment](https://miro.medium.com/max/1050/1*wo5S8pUXCslcbKLDI2xTWw.png)
-
-   ## Roles & Responsibilities:-
-
-   - The Landing page is done by Aashish.
-   - The women page, Product Details page and the Payment pages are done by Sourav.
-   - All the other Product pages except the Women page is done by Tirupathi.
-
    ## Challenges:-
-   We had faced a lot of issues in cloning the website. First of all we were not used to reading the code of other people. I was working on the cart functionality which was in Landing page done by Aashish. There we faced some issues. We also sometimes had to fix some issues related to merging our code through github.
-
+   This whole Project is Build using Typescript. So that makes the Project a bit more challenging. Also Building everything from scratch with out any help of any css frame work or Component Library made this a bit more difficult.
    ## Learning:-
-   - We all became proficient in reading the code of team members.
-- Our code writing style became cleaner as we had to think while writing code that other team member will be reading.
-- We had to learn about many CSS properties that we didn’t know before.
-- Our skills in Java Script and DOM manipulation became better.
-- We all learned how to plan a project and execute that.
+   - Through out this Project My Problem Solving skills Improved a Lot.
+- Making Projects with Next.js apis and Mongoose was a bit challenging.
+- My Code writting style improved a Lot.
+
 
