@@ -4,7 +4,7 @@ It is a Full Stack responsive e-commerce application built with Next.js and Mong
  ## Tech Stack
  - HTML
  - CSS
- - Java Script
+ - TypeScript
  - React
  - Next.js
  - Node.js
