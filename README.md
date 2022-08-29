@@ -26,7 +26,7 @@ This is the main landing page of our website. Here clicking on any option of the
  ![Product Details](https://next-js-blog-codebash.s3.us-east-2.amazonaws.com/Screenshot+2022-08-29+at+9.39.52+AM.png)
  
   - ###  Cart Window:-
-  Here all the products added to the cart will be shown. At the bottom there is total price of the cart and the proceed to buy button. Clicking on the button will redirect the user to the Payment Page .
+  Here all the products added to the cart will be shown.
   
   ![cart](https://miro.medium.com/max/875/1*jBJkRpRw0VNdZ2eCphX_4A.png)
 
