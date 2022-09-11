@@ -4,6 +4,7 @@
     background-color: rgb(243, 243, 243);
     padding: 10px 5px;
     border-bottom: 3px solid rgb(248, 37, 104);
+    position: relative;
 }
 .searchBar>input{
     border: none;
@@ -15,3 +16,40 @@
 .searchBar>input:focus{
     outline: none;
 }
+.searchOptions{
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    height: 400px;
+    top: 100%;
+    left: -0.5%;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    animation: heightChange 1s linear ease-in;
+    overflow: auto;
+}
+.searchProducts{
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 10px;
+    display: flex;
+}
+.searchProducts > img {
+    width: 30%;
+    max-width: 70px;
+}
+.searchProducts>div{
+    margin-left: 10px;
+}
+.searchProducts:hover{
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+}
+@keyframes heightChange{
+    0%{
+      height: 0px;
+    }
+    100%{
+      height: 400px;
+    }
+  }
