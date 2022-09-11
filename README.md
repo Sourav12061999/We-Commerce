@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# We Commerce
+It is a Full Stack responsive e-commerce application built with Next.js and MongoDB. Checkout the live website at:- [link](https://we-commerce.vercel.app)
 
-## Getting Started
+ ## Tech Stack
+ - HTML
+ - CSS
+ - TypeScript
+ - React
+ - Next.js
+ - Node.js
+ - MongoDB
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- ### Home page:-
+This is the main landing page of our website. Here clicking on any option of the Navbar will redirect the user to the respective Product Page. If you haven't signed up yet an account circle will show up. Clicking on that it will redirect you to the sign up page. If you are already signed in a cart button will show up where you can see all of your cart items.
+![Landing Page](https://next-js-blog-codebash.s3.us-east-2.amazonaws.com/Screenshot+2022-08-29+at+9.24.53+AM.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ### Product Page:-
+ When you click on Men or Women the Products of that Gender will showup. You can also filter the Products by their Brand or Catagory or Price.
+ Clicked on any Product You will be redirected on a new Page.
+ ![product](https://next-js-blog-codebash.s3.us-east-2.amazonaws.com/Screenshot+2022-08-29+at+9.30.27+AM.png)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+  - ### Product Details Page:-
+  After clicking on any Product this Page opens up. Here you can have a detailed view of the Product. This is also the only page from where you can add Products to the cart.
+ ![Product Details](https://next-js-blog-codebash.s3.us-east-2.amazonaws.com/Screenshot+2022-08-29+at+9.39.52+AM.png)
+ 
+  - ###  Cart Window:-
+  Here all the products added to the cart will be shown.
+  
+  ![cart](https://miro.medium.com/max/875/1*jBJkRpRw0VNdZ2eCphX_4A.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+   ## Challenges:-
+   This whole Project is Build using Typescript. So that makes the Project a bit more challenging. Also Building everything from scratch with out any help of any css frame work or Component Library made this a bit more difficult.
+   ## Learning:-
+   - Through out this Project My Problem Solving skills Improved a Lot.
+- Making Projects with Next.js apis and Mongoose was a bit challenging.
+- My Code writting style improved a Lot.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
